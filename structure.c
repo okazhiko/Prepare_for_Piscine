@@ -38,6 +38,9 @@ int main() {
 
 */
 
+/*構造体の配列*/
+
+/*
 int main(){
     person_t p[PEOPLE_NUM] = {
         {"Bob", 'M', 19, 165.4, 72.5},
@@ -69,4 +72,30 @@ int main(){
     printf("Weight average: %f\n", weight_ave);
     printf("Female height average: %f\n", height_aveF);
 
+}
+*/
+
+/*構造体をメンバにする構造体*/
+
+typedef struct {
+    person_t boy;
+    person_t girl;
+    int month;
+} couple_t;
+
+int main(){
+    couple_t cpl = {
+        {"Tom", 'M', 20, 175.2, 66.3},
+        {"Stefany", 'F', 18, 159.3, 48.5},
+        8
+    };
+
+    printf("%s and %s are going together for %d months.\n", cpl.boy.name, cpl.girl.name, cpl.month);
+
+    person_t newboy = {"Leonardo", 'M', 19, 172.8, 67.2};
+    cpl.boy = newboy;
+    cpl.month = 2;
+    printf("%s and %s are going together for %d months.\n", cpl.boy.name, cpl.girl.name, cpl.month);
+
+    return 0;
 }
