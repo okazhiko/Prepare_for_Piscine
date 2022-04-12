@@ -7,7 +7,11 @@
 int sort[N];
 
 void quickSort(int bottom, int top, int *data){
-// *dataで渡す理由は、配列のデータはそのままでは関数の引数にできないから。先頭の要素へのポインタであらわす必要がある。
+/* 
+*dataで渡す理由は、配列のデータはそのままでは関数の引数にできないから。先頭の要素へのポインタであらわす必要がある。
+bottom: 配列の先頭。多くの場合0
+top: 配列の一番最後。N個の配列ならN-1
+*/
     int lower, upper, div, temp;
     if(bottom >= top){
         return;
