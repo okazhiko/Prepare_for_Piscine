@@ -18,17 +18,23 @@ void mergesort(int n, int *x){
     mergesort(m, x);
     mergesort(n - m, x + m);
 
+    /*
+    配列長を真ん中で分割し、それを配列数１になるまで繰り返す。
+    */
+
     //マージ
     for (i = 0; i < m; i++){
         buffer[i] = x[i];
     }
+    //mまでのxの配列をbufferのリストに入れておく。
 
     j = m;
     i = k = 0;
+    //iが前半、jが後半
 
     while(i < m && j < n){
-        if(buffer[i] <= x[j]){
-            x[k++] = buffer[i++];
+        if(buffer[i] <= x[j]){      //リスト前半と後半のiを比較し、後半が大きいのであれば
+            x[k++] = buffer[i++];   //
         }
         else{
             x[k++] = x[j++];
@@ -51,7 +57,7 @@ int main(void){
     }
 
     printf("\nProcessing\n");
-    mergesort(N, *sort);
+    mergesort(N, sort);
 
     printf("\nFinished\n");
 
