@@ -14,14 +14,14 @@ void merge_sort(int array[], int left, int right){      //引数は①配列、�
             work[i] = array[i];                         //array[]の左側をwork[i]に保管
         }
         for (j = mid + 1; j <= right; j++){
-            work[right - (j - (mid + 1))] = array[j];   //array[]の右側を逆にしてwork[]に保管
+            work[right - (j - (mid + 1))] = array[j];   //
         }
         i = left;                                       //
         j = right;                                      //
         for (k = left; k <= right; k++){                //
             if(work[i] < work[j]){                      //work[]の最初と最後を比較し、最後が大きいのであれば
                 array[k] = work[i++]; 
-            }                                           //array[]の最初はwork[i + 1]となる            }
+            }                                                       }
             else{
                 array[k] = work[j--]; 
             }                  
